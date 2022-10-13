@@ -1,7 +1,7 @@
 console.log("loops!")
 
 const array = [];
-for ( let i = 1; i < 10; i=i+2) {
+for ( let i = 1; i < 10; i += 2) {
     array.push(i);
 }
 console.log(array);
@@ -12,9 +12,9 @@ for (let i = 2; i <= 20; i++){
 }
 console.log(newArray);
 
-const pondArray =["#", "##", "###", "####", "#####", "######", "#######"]
-let sign ="";
+const pondArray =["#", "##", "###", "####", "#####", "######", "#######"];
+let sign = "";
 for (let i = 0; i < pondArray.length; i++) {
-    sign = sign + pondArray[i] + "\n";
+    sign += pondArray[i] + "\n";
 }
-console.log(sign)
+console.log(sign);
