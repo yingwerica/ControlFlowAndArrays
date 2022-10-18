@@ -43,3 +43,43 @@ class Character {
   console.log(me);
   me.setHair('red');
   console.log(me);
+
+  class Hobbit extends Character {
+    constructor (name, age, eyes, hair) {
+      super(name, age, eyes, hair);
+      this.skills = ["thievery", "speed", "willpower"];
+    }
+    steal () {
+      console.log('lets get away!');
+    }
+    greet (otherCharacter) {
+      console.log('Greetings ' + otherCharacter);
+    }
+    smite () {
+      super.smite();
+      this.steal();
+    }
+  }
+  const frodo = new Hobbit('Frodo', 30, 'brown', 'black')
+  console.log(frodo);
+
+  class Factory {
+    constructor (company) {
+      this.company = company;
+      this.cars = [];
+    }
+    generateCar () {
+      const newCar = new Car(this.company, this.cars.length);
+      this.cars.push(newCar);
+    }
+    findCar (index) {
+      return this.cars[index];
+    }
+  }
+  const tesla = new Factory('Tesla');
+  tesla.generateCar();
+  tesla.generateCar();
+  tesla.generateCar();
+  tesla.generateCar();
+  console.log(tesla);
+  console.log(tesla.findCar(0));
